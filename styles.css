@@ -120,6 +120,11 @@ a {
   padding-bottom: 2rem;
 }
 
+.about_me_text {
+  padding-left: 2cm;
+  padding-right: 1cm;
+}
+
 .coolfrog {
   background-image: url("https://media.istockphoto.com/id/97930844/photo/cool-frog.jpg?s=612x612&w=0&k=20&c=Z0l1NkR32YjL2eRKOwMbDy392r7Iek9v2_nUqLm2W3M=");
   background-size: 3cm;
