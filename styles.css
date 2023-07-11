@@ -24,17 +24,26 @@ a {
     display: grid;
     grid-template-areas:
   	"area1 area2"
+    "area3 area3"
   }
 
   .project1 {
     grid-area: area1;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 100px;
   }
 
   .project2 {
     grid-area: area2;
-    padding-right: 30px;
+    padding-right: 100px;
+    padding-bottom: 100px;
+  }
+
+  .project3 {
+    grid-area: area3;
+    padding-left: 100px;
+    padding-right: 100px;
   }
 }
 
@@ -54,6 +63,7 @@ a {
     grid-template-areas:
   	"area1"
     "area2"
+    "area3"
   }
 
   .project1 {
@@ -62,6 +72,10 @@ a {
 
   .project2 {
     grid-area: area2;
+  }
+
+  .project3 {
+    grid-area: area3;
   }
 }
 
@@ -90,6 +104,10 @@ a {
   color: #78d4f0;
 }
 
+.highlight:hover {
+  color: #78d4f0;
+}
+
 .main_area {
   position: relative;
   text-align: center;
@@ -102,7 +120,9 @@ a {
   padding-bottom: 2rem;
 }
 
-.about_me_text {
-  padding-left: 3rem;
-  padding-right: 3rem;
+.coolfrog {
+  background-image: url("https://media.istockphoto.com/id/97930844/photo/cool-frog.jpg?s=612x612&w=0&k=20&c=Z0l1NkR32YjL2eRKOwMbDy392r7Iek9v2_nUqLm2W3M=");
+  background-size: 3cm;
 }
+
+
