@@ -24,7 +24,7 @@ a {
     display: grid;
     grid-template-areas:
   	"area1 area2"
-    "area3 area3"
+    "area3 area4"
   }
 
   .project1 {
@@ -42,6 +42,12 @@ a {
 
   .project3 {
     grid-area: area3;
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+
+  .project4 {
+    grid-area: area4;
     padding-left: 100px;
     padding-right: 100px;
   }
