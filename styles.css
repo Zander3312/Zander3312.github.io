@@ -9,6 +9,17 @@ a {
 	color: inherit;
 }
 
+table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+th {
+  padding: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
 @media(min-width: 1000px) {
   .sidebar {
     font-size: 1.7rem;
@@ -26,6 +37,34 @@ a {
   	"area1 area2"
     "area3 area3"
     "area4 area4"
+    "area5 area5"
+  }
+
+  .tracker_area {
+    display: grid;
+    grid-template-areas:
+  	"area1_st area2_st"
+  }
+
+  #first_unit_select {
+    margin-right: 50px;
+    padding-right: 20px;
+  }
+
+  .st1 {
+    grid-area: area1_st;
+    margin-left: 300px;
+  }
+
+  .st2 {
+    grid-area: area2_st;
+    margin-right: 300px;
+  }
+
+  .st_button {
+    margin-left: 20px;
+    margin-right: 20px;
+    position: relative;
   }
 
   .project1 {
@@ -45,10 +84,17 @@ a {
     grid-area: area3;
     padding-left: 100px;
     padding-right: 100px;
+    padding-bottom: 50px;
   }
 
   .project4 {
     grid-area: area4;
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+
+  .project5 {
+    grid-area: area5;
     padding-left: 100px;
     padding-right: 100px;
   }
@@ -71,6 +117,8 @@ a {
   	"area1"
     "area2"
     "area3"
+    "area4"
+    "area5"
   }
 
   .project1 {
@@ -84,7 +132,26 @@ a {
   .project3 {
     grid-area: area3;
   }
+
+  .project4 {
+    grid-area: area4;
+  }
+
+  .project5 {
+    grid-area: area5;
+  }
 }
+
+.help .tiptext {
+  visibility: hidden;
+  position: absolute;
+  margin-left: 20px;
+}
+
+.help:hover .tiptext {
+  visibility: visible;
+}
+
 
 .sidebar {
   position: fixed;
@@ -125,6 +192,27 @@ a {
   color: white;
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+
+.st_main_area {
+  position: relative;
+  text-align: center;
+  background-color: rgb(63,67,73);
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  color: white;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.st_add_buttons {
+  text-align: left;
+
+}
+
+#leaderboard_unit_select {
+  margin-bottom: 20px;
 }
 
 .about_me_text {

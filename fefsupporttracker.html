@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
+    <title></title>
+  </head>
+  <body>
+    <div class="st_main_area" id="main_area">
+      <h1>
+        FE Fates Support Tracker
+      </h1><br><br>
+      <div class="tracker_area">
+        <div class="st1" id="unit_select">
+          <select id="first_unit_select" onChange="loadSecondUnits()">
+            <option>First unit</option>
+          </select>
+          <select id="second_unit_select" onChange="enableButtons()" disabled="true">
+            <option>Second unit</option>
+          </select><br><br><br><br>
+          <div class="st_add_buttons">
+            <button class="st_button" id="1_button" onClick="addSupportPoints(1)" disabled="true">+1</button><span class="help">?<span class="tiptext">Dual Strike/Guard, no attack</span></span><br><br>
+            <button class="st_button" id="2_button" onClick="addSupportPoints(2)" disabled="true">+2</button><span class="help">?<span class="tiptext">Adjacency/Sing/Staff</span></span><br><br>
+           <button class="st_button" id="3_button" onClick="addSupportPoints(3)" disabled="true">+3</button><span class="help">?<span class="tiptext">Attack while paired up, no Dual Strike/Guard</span></span><br><br>
+            <button class="st_button" id="4_button" onClick="addSupportPoints(4)" disabled="true">+4</button><span class="help">?<span class="tiptext">Attack + Dual Strike/Guard</span></span><br><br>
+          </div>
+        </div>
+        
+        <div class="st2" id="leaderboard_area">
+          <h2>Leaderboard</h2>
+          <select id="leaderboard_unit_select" onChange="loadUnitLB('leaderboard_unit_select')" disabled="true">
+            <option>Select a unit</option>
+          </select>
+          <table id="lb_table">
+            <thead>
+              <tr>
+                <th>First Unit</th>
+                <th>Second Unit</th>
+                <th>Points</th>
+              </tr>
+            </thead>
+            <tbody id="lb_body">
+              <!--to be filled via JavaScript-->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="supporttracker/stscript.js"></script>
+  </body>
+</html>

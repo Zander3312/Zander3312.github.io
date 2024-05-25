@@ -1,0 +1,129 @@
+{
+    "unitlist": [
+        {
+            "name": "Corrin",
+            "status": "corrin",
+            "others": []
+        },
+        {
+            "name": "Felicia",
+            "status": "female",
+            "others": ["Peri", "Flora"]
+        },
+        {
+            "name": "Jakob",
+            "status": "male",
+            "others": ["Gunter", "Silas"]
+        },
+        {
+            "name": "Elise",
+            "status": "female",
+            "others": ["Effie", "Camilla", "Azura"]
+        },
+        {
+            "name": "Silas",
+            "status": "male",
+            "others": ["Jakob", "Kaze"]
+        },
+        {
+            "name": "Arthur",
+            "status": "male",
+            "others": ["Benny", "Keaton", "Niles"]
+        },
+        {
+            "name": "Effie",
+            "status": "female",
+            "others": ["Elise", "Mozu", "Nyx"]
+        },
+        {
+            "name": "Odin",
+            "status": "male",
+            "others": ["Niles", "Leo", "Laslow"]
+        },
+        {
+            "name": "Niles",
+            "status": "male",
+            "others": ["Odin", "Leo", "Arthur"]
+        },
+        {
+            "name": "Nyx",
+            "status": "female",
+            "others": ["Effie", "Mozu", "Charlotte"]
+        },
+        {
+            "name": "Azura",
+            "status": "female",
+            "others": ["Elise"]
+        },
+        {
+            "name": "Selena",
+            "status": "female",
+            "others": ["Camilla", "Beruka", "Peri"]
+        },
+        {
+            "name": "Beruka",
+            "status": "female",
+            "others": ["Camilla", "Selena", "Charlotte"]
+        },
+        {
+            "name": "Camilla",
+            "status": "female",
+            "others": ["Selena", "Beruka", "Elise"]
+        },
+        {
+            "name": "Peri",
+            "status": "female",
+            "others": ["Selena", "Felicia", "Charlotte"]
+        },
+        {
+            "name": "Laslow",
+            "status": "male",
+            "others": ["Xander", "Odin", "Keaton"]
+        },
+        {
+            "name": "Charlotte",
+            "status": "female",
+            "others": ["Peri", "Beruka", "Nyx"]
+        },
+        {
+            "name": "Benny",
+            "status": "male",
+            "others": ["Arthur", "Keaton"]
+        },
+        {
+            "name": "Leo",
+            "status": "male",
+            "others": ["Xander", "Odin", "Niles"]
+        },
+        {
+            "name": "Gunter",
+            "status": "corrinsexual",
+            "others": ["Jakob"]
+        },
+        {
+            "name": "Xander",
+            "status": "male",
+            "others": ["Laslow", "Leo", "Kaze"]
+        },
+        {
+            "name": "Shura",
+            "status": "corrinsexual",
+            "others": []
+        },
+        {
+            "name": "Flora",
+            "status": "corrinsexual",
+            "others": ["Felicia"]
+        },
+        {
+            "name": "Izana",
+            "status": "corrinsexual",
+            "others": []
+        },
+        {
+            "name": "Mozu",
+            "status": "female",
+            "others": ["Effie", "Nyx"]
+        }
+    ]
+}
