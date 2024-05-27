@@ -3,127 +3,384 @@
         {
             "name": "Corrin",
             "status": "corrin",
-            "others": []
+            "origin": "n/a",
+            "routes": ["br", "cq", "rev"],
+            "others": [],
+            "rev_only": []
         },
         {
             "name": "Felicia",
             "status": "female",
-            "others": ["Peri", "Flora"]
+            "origin": "either",
+            "routes": ["br", "cq", "rev"],
+            "others_br": ["Hana"],
+            "others_cq": ["Peri", "Flora"],
+            "others_rev": ["Hana", "Peri", "Flora"]
         },
         {
             "name": "Jakob",
             "status": "male",
-            "others": ["Gunter", "Silas"]
-        },
-        {
-            "name": "Elise",
-            "status": "female",
-            "others": ["Effie", "Camilla", "Azura"]
-        },
-        {
-            "name": "Silas",
-            "status": "male",
-            "others": ["Jakob", "Kaze"]
-        },
-        {
-            "name": "Arthur",
-            "status": "male",
-            "others": ["Benny", "Keaton", "Niles"]
-        },
-        {
-            "name": "Effie",
-            "status": "female",
-            "others": ["Elise", "Mozu", "Nyx"]
-        },
-        {
-            "name": "Odin",
-            "status": "male",
-            "others": ["Niles", "Leo", "Laslow"]
-        },
-        {
-            "name": "Niles",
-            "status": "male",
-            "others": ["Odin", "Leo", "Arthur"]
-        },
-        {
-            "name": "Nyx",
-            "status": "female",
-            "others": ["Effie", "Mozu", "Charlotte"]
+            "origin": "either",
+            "routes": ["br", "cq", "rev"],
+            "others_br": ["Silas", "Takumi"],
+            "others_cq": ["Silas", "Gunter"],
+            "others_rev": ["Takumi", "Silas"]
         },
         {
             "name": "Azura",
             "status": "female",
-            "others": ["Elise"]
+            "origin": "either",
+            "routes": ["br", "cq", "rev"],
+            "others_br": ["Sakura", "Hinoka"],
+            "others_cq": ["Elise"],
+            "others_rev": ["Sakura", "Elise", "Hinoka"]
         },
         {
-            "name": "Selena",
-            "status": "female",
-            "others": ["Camilla", "Beruka", "Peri"]
-        },
-        {
-            "name": "Beruka",
-            "status": "female",
-            "others": ["Camilla", "Selena", "Charlotte"]
-        },
-        {
-            "name": "Camilla",
-            "status": "female",
-            "others": ["Selena", "Beruka", "Elise"]
-        },
-        {
-            "name": "Peri",
-            "status": "female",
-            "others": ["Selena", "Felicia", "Charlotte"]
-        },
-        {
-            "name": "Laslow",
+            "name": "Kaze",
             "status": "male",
-            "others": ["Xander", "Odin", "Keaton"]
+            "origin": "either",
+            "routes": ["br", "cq", "rev"],
+            "others_br": ["Silas", "Saizo"],
+            "others_cq": ["Silas", "Xander"],
+            "others_rev": ["Saizo", "Silas", "Xander"]
         },
         {
-            "name": "Charlotte",
-            "status": "female",
-            "others": ["Peri", "Beruka", "Nyx"]
-        },
-        {
-            "name": "Benny",
+            "name": "Silas",
             "status": "male",
-            "others": ["Arthur", "Keaton"]
-        },
-        {
-            "name": "Leo",
-            "status": "male",
-            "others": ["Xander", "Odin", "Niles"]
-        },
-        {
-            "name": "Gunter",
-            "status": "corrinsexual",
-            "others": ["Jakob"]
-        },
-        {
-            "name": "Xander",
-            "status": "male",
-            "others": ["Laslow", "Leo", "Kaze"]
-        },
-        {
-            "name": "Shura",
-            "status": "corrinsexual",
-            "others": []
-        },
-        {
-            "name": "Flora",
-            "status": "corrinsexual",
-            "others": ["Felicia"]
-        },
-        {
-            "name": "Izana",
-            "status": "corrinsexual",
-            "others": []
+            "origin": "either",
+            "routes": ["br", "cq", "rev"],
+            "others_br": ["Jakob", "Kaze", "Ryoma"],
+            "others_cq": ["Jakob", "Kaze"],
+            "others_rev": ["Jakob", "Kaze", "Ryoma"]
         },
         {
             "name": "Mozu",
             "status": "female",
-            "others": ["Effie", "Nyx"]
+            "origin": "either",
+            "routes": ["br", "cq", "rev"],
+            "others_br": ["Oboro"],
+            "others_cq": ["Effie", "Nyx"],
+            "others_rev": ["Oboro", "Effie", "Nyx"]
+        },
+        {
+            "name": "Rinkah",
+            "status": "female",
+            "origin": "hoshido",
+            "routes": ["br", "rev"],
+            "others": ["Oboro", "Orochi", "Kagero"],
+            "rev_only": ["Keaton", "Benny", "Charlotte"]
+        },
+        {
+            "name": "Sakura",
+            "status": "female",
+            "origin": "hoshido",
+            "routes": ["br", "rev"],
+            "others": ["Azura", "Hana", "Hinoka"],
+            "rev_only": ["Leo", "Xander", "Elise"]
+        },
+        {
+            "name": "Subaki",
+            "status": "male",
+            "origin": "hoshido",
+            "routes": ["br", "rev"],
+            "others": ["Azama", "Hinata", "Saizo"],
+            "rev_only": ["Selena", "Nyx", "Niles"]
+        },
+        {
+            "name": "Hana",
+            "status": "female",
+            "origin": "hoshido",
+            "routes": ["br", "rev"],
+            "others": ["Sakura", "Felicia", "Setsuna"],
+            "rev_only": ["Keaton", "Laslow", "Effie"]
+        },
+        {
+            "name": "Saizo",
+            "status": "male",
+            "origin": "hoshido",
+            "routes": ["br", "rev"],
+            "others": ["Kaze", "Subaki", "Ryoma"],
+            "rev_only": ["Beruka", "Charlotte", "Laslow"]
+        },
+        {
+            "name": "Orochi",
+            "status": "female",
+            "origin": "hoshido",
+            "routes": ["br", "rev"],
+            "others": ["Rinkah", "Oboro", "Kagero"],
+            "rev_only": ["Odin", "Laslow", "Nyx"]
+        },
+        {
+            "name": "Hinoka",
+            "status": "female",
+            "origin": "hoshido",
+            "routes": ["br", "rev"],
+            "others": ["Azura", "Sakura", "Setsuna"],
+            "rev_only": ["Leo", "Xander", "Camilla"]
+        },
+        {
+            "name": "Azama",
+            "status": "male",
+            "origin": "hoshido",
+            "routes": ["br", "rev"],
+            "others": ["Subaki", "Hayato", "Kaden"],
+            "rev_only": ["Effie", "Beruka", "Arthur"]
+        },
+        {
+            "name": "Setsuna",
+            "status": "female",
+            "origin": "hoshido",
+            "routes": ["br", "rev"],
+            "others": ["Hana", "Hinoka", "Kagero"],
+            "rev_only": ["Arthur", "Niles", "Selena"]
+        },
+        {
+            "name": "Hayato",
+            "status": "male",
+            "origin": "hoshido",
+            "routes": ["br", "rev"],
+            "others": ["Azama", "Kaden"],
+            "rev_only": ["Effie", "Nyx", "Fuga"]
+        },
+        {
+            "name": "Oboro",
+            "status": "female",
+            "origin": "hoshido",
+            "routes": ["br", "rev"],
+            "others": ["Rinkah", "Orochi", "Mozu"],
+            "rev_only": ["Benny", "Niles", "Beruka"]
+        },
+        {
+            "name": "Hinata",
+            "status": "male",
+            "origin": "hoshido",
+            "routes": ["br", "rev"],
+            "others": ["Subaki", "Takumi", "Kaden"],
+            "rev_only": ["Selena", "Peri", "Odin"]
+        },
+        {
+            "name": "Takumi",
+            "status": "male",
+            "origin": "hoshido",
+            "routes": ["br", "rev"],
+            "others": ["Jakob", "Hinata", "Ryoma"],
+            "rev_only": ["Camilla", "Elise", "Leo"]
+        },
+        {
+            "name": "Kagero",
+            "status": "female",
+            "origin": "hoshido",
+            "routes": ["br", "rev"],
+            "others": ["Rinkah", "Orochi", "Setsuna"],
+            "rev_only": ["Arthur", "Odin", "Peri"]
+        },
+        {
+            "name": "Reina",
+            "status": "corrinsexual",
+            "origin": "hoshido",
+            "routes": ["br", "rev"],
+            "others": [],
+            "rev_only": []
+        },
+        {
+            "name": "Kaden",
+            "status": "male",
+            "origin": "hoshido",
+            "routes": ["br", "rev"],
+            "others": ["Azama", "Hayato", "Hinata"],
+            "rev_only": ["Charlotte", "Peri", "Keaton"]
+        },
+        {
+            "name": "Ryoma",
+            "status": "male",
+            "origin": "hoshido",
+            "routes": ["br", "rev"],
+            "others": ["Silas", "Saizo", "Takumi"],
+            "rev_only": ["Camilla", "Elise", "Xander"]
+        },
+        {
+            "name": "Scarlet",
+            "status": "corrinsexual",
+            "origin": "hoshido",
+            "routes": ["br", "rev"],
+            "others": [],
+            "rev_only": []
+        },
+        {
+            "name": "Elise",
+            "status": "female",
+            "origin": "nohr",
+            "routes": ["cq", "rev"],
+            "others": ["Effie", "Camilla", "Azura"],
+            "rev_only": ["Takumi", "Ryoma", "Sakura"]
+        },
+        {
+            "name": "Arthur",
+            "status": "male",
+            "origin": "nohr",
+            "routes": ["cq", "rev"],
+            "others": ["Niles", "Benny", "Keaton"],
+            "rev_only": ["Kagero", "Setsuna", "Azama"]
+        },
+        {
+            "name": "Effie",
+            "status": "female",
+            "origin": "nohr",
+            "routes": ["cq", "rev"],
+            "others": ["Elise", "Nyx", "Mozu"],
+            "rev_only": ["Azama", "Hayato", "Hana"]
+        },
+        {
+            "name": "Odin",
+            "status": "male",
+            "origin": "nohr",
+            "routes": ["cq", "rev"],
+            "others": ["Niles", "Laslow", "Leo"],
+            "rev_only": ["Orochi", "Kagero", "Hinata"]
+        },
+        {
+            "name": "Niles",
+            "status": "male",
+            "origin": "nohr",
+            "routes": ["cq", "rev"],
+            "others": ["Arthur", "Odin", "Leo"],
+            "rev_only": ["Oboro", "Setsuna", "Subaki"]
+        },
+        {
+            "name": "Nyx",
+            "status": "female",
+            "origin": "nohr",
+            "routes": ["cq", "rev"],
+            "others": ["Effie", "Charlotte", "Mozu"],
+            "rev_only": ["Subaki", "Hayato", "Orochi"]
+        },
+        {
+            "name": "Selena",
+            "status": "female",
+            "origin": "nohr",
+            "routes": ["cq", "rev"],
+            "others": ["Camilla", "Beruka", "Peri"],
+            "rev_only": ["Subaki", "Hinata", "Setsuna"]
+        },
+        {
+            "name": "Beruka",
+            "status": "female",
+            "origin": "nohr",
+            "routes": ["cq", "rev"],
+            "others": ["Camilla", "Selena", "Charlotte"],
+            "rev_only": ["Saizo", "Azama", "Oboro"]
+        },
+        {
+            "name": "Camilla",
+            "status": "female",
+            "origin": "nohr",
+            "routes": ["cq", "rev"],
+            "others": ["Elise", "Selena", "Beruka"],
+            "rev_only": ["Takumi", "Xander", "Hinoka"]
+        },
+        {
+            "name": "Peri",
+            "status": "female",
+            "origin": "nohr",
+            "routes": ["cq", "rev"],
+            "others": ["Felicia", "Selena", "Charlotte"],
+            "rev_only": ["Hinata", "Kaden", "Kagero"]
+        },
+        {
+            "name": "Laslow",
+            "status": "male",
+            "origin": "nohr",
+            "routes": ["cq", "rev"],
+            "others": ["Xander", "Odin", "Keaton"],
+            "rev_only": ["Hana", "Orochi", "Saizo"]
+        },
+        {
+            "name": "Charlotte",
+            "status": "female",
+            "origin": "nohr",
+            "routes": ["cq", "rev"],
+            "others": ["Peri", "Beruka", "Nyx"],
+            "rev_only": ["Saizo", "Kaden", "Rinkah"]
+        },
+        {
+            "name": "Benny",
+            "status": "male",
+            "origin": "nohr",
+            "routes": ["cq", "rev"],
+            "others": ["Arthur", "Keaton"],
+            "rev_only": ["Rinkah", "Oboro", "Hayato"]
+        },
+        {
+            "name": "Leo",
+            "status": "male",
+            "origin": "nohr",
+            "routes": ["cq", "rev"],
+            "others": ["Xander", "Odin", "Niles"],
+            "rev_only": ["Sakura", "Hinoka", "Takumi"]
+        },
+        {
+            "name": "Gunter",
+            "status": "corrinsexual",
+            "origin": "nohr",
+            "routes": ["cq"],
+            "others": ["Jakob"],
+            "rev_only": []
+        },
+        {
+            "name": "Xander",
+            "status": "male",
+            "origin": "nohr",
+            "routes": ["cq", "rev"],
+            "others": ["Laslow", "Leo", "Kaze"],
+            "rev_only": ["Sakura", "Hinoka", "Ryoma"]
+        },
+        {
+            "name": "Shura",
+            "status": "corrinsexual",
+            "origin": "n/a",
+            "routes": ["br", "cq", "rev"],
+            "others": [],
+            "rev_only": []
+        },
+        {
+            "name": "Yukimura",
+            "status": "corrinsexual",
+            "origin": "hoshido",
+            "routes": ["br"],
+            "others": [],
+            "rev_only": []
+        },
+        {
+            "name": "Izana",
+            "status": "corrinsexual",
+            "origin": "n/a",
+            "routes": ["br", "cq"],
+            "others": [],
+            "rev_only": []
+        },
+        {
+            "name": "Flora",
+            "status": "corrinsexual",
+            "origin": "n/a",
+            "routes": ["cq", "rev"],
+            "others": ["Felicia"],
+            "rev_only": []
+        },
+        {
+            "name": "Fuga",
+            "status": "corrinsexual",
+            "origin": "n/a",
+            "routes": ["rev"],
+            "others": ["Hayato"],
+            "rev_only": []
+        },
+        {
+            "name": "Anna",
+            "status": "corrinsexual",
+            "origin": "n/a",
+            "routes": ["br", "cq", "rev"],
+            "others": [],
+            "rev_only": []
         }
     ]
 }

@@ -9,7 +9,16 @@
     <div class="st_main_area" id="main_area">
       <h1>
         FE Fates Support Tracker
-      </h1><br><br>
+      </h1>
+      <div>
+        <h2>Select a route:</h2>
+        <input type="radio" id="route_select_br" name="route_select_br" value="Birthright" onChange="loadFirstUnits('br')">
+        <label for="br">Birthright</label>
+        <input type="radio" id="route_select_cq" name="route_select_cq" value="Conquest" onChange="loadFirstUnits('cq')">
+        <label for="cq">Conquest</label>
+        <input type="radio" id="route_select_rev" name="route_select_rev" value="Revelation" onChange="loadFirstUnits('rev')">
+        <label for="rev">Revelation</label>
+      </div><br><br>
       <div class="tracker_area">
         <div class="st1" id="unit_select">
           <select id="first_unit_select" onChange="loadSecondUnits()">
