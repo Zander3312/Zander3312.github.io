@@ -1,5 +1,5 @@
 let unitjson = `{
-    "unitlist": [
+    "adultlist": [
         {
             "name": "Corrin",
             "status": "corrin",
@@ -22,36 +22,36 @@ let unitjson = `{
             "status": "male",
             "origin": "either",
             "routes": ["br", "cq", "rev"],
-            "others_br": ["Silas", "Takumi"],
-            "others_cq": ["Silas", "Gunter"],
-            "others_rev": ["Takumi", "Silas"]
+            "others_br": ["Silas", "Takumi", "Dwyer"],
+            "others_cq": ["Silas", "Gunter", "Dwyer"],
+            "others_rev": ["Takumi", "Silas", "Dwyer"]
         },
         {
             "name": "Azura",
             "status": "female",
             "origin": "either",
             "routes": ["br", "cq", "rev"],
-            "others_br": ["Sakura", "Hinoka"],
-            "others_cq": ["Elise"],
-            "others_rev": ["Sakura", "Elise", "Hinoka"]
+            "others_br": ["Sakura", "Hinoka", "Shigure"],
+            "others_cq": ["Elise", "Shigure"],
+            "others_rev": ["Sakura", "Elise", "Hinoka", "Shigure"]
         },
         {
             "name": "Kaze",
             "status": "male",
             "origin": "either",
             "routes": ["br", "cq", "rev"],
-            "others_br": ["Silas", "Saizo"],
-            "others_cq": ["Silas", "Xander"],
-            "others_rev": ["Saizo", "Silas", "Xander"]
+            "others_br": ["Silas", "Saizo", "Midori"],
+            "others_cq": ["Silas", "Xander", "Midori"],
+            "others_rev": ["Saizo", "Silas", "Xander", "Midori"]
         },
         {
             "name": "Silas",
             "status": "male",
             "origin": "either",
             "routes": ["br", "cq", "rev"],
-            "others_br": ["Jakob", "Kaze", "Ryoma"],
-            "others_cq": ["Jakob", "Kaze"],
-            "others_rev": ["Jakob", "Kaze", "Ryoma"]
+            "others_br": ["Jakob", "Kaze", "Ryoma", "Sophie"],
+            "others_cq": ["Jakob", "Kaze", "Sophie"],
+            "others_rev": ["Jakob", "Kaze", "Ryoma", "Sophie"]
         },
         {
             "name": "Mozu",
@@ -84,7 +84,8 @@ let unitjson = `{
             "origin": "hoshido",
             "routes": ["br", "rev"],
             "others": ["Azama", "Hinata", "Saizo"],
-            "rev_only": ["Selena", "Nyx", "Niles"]
+            "rev_only": ["Selena", "Nyx", "Niles"],
+            "child": "Caeldori"
         },
         {
             "name": "Hana",
@@ -100,7 +101,8 @@ let unitjson = `{
             "origin": "hoshido",
             "routes": ["br", "rev"],
             "others": ["Kaze", "Subaki", "Ryoma"],
-            "rev_only": ["Beruka", "Charlotte", "Laslow"]
+            "rev_only": ["Beruka", "Charlotte", "Laslow"],
+            "child": "Asugi"
         },
         {
             "name": "Orochi",
@@ -124,7 +126,8 @@ let unitjson = `{
             "origin": "hoshido",
             "routes": ["br", "rev"],
             "others": ["Subaki", "Hayato", "Kaden"],
-            "rev_only": ["Effie", "Beruka", "Arthur"]
+            "rev_only": ["Effie", "Beruka", "Arthur"],
+            "child": "Mitama"
         },
         {
             "name": "Setsuna",
@@ -140,7 +143,8 @@ let unitjson = `{
             "origin": "hoshido",
             "routes": ["br", "rev"],
             "others": ["Azama", "Kaden"],
-            "rev_only": ["Effie", "Nyx", "Fuga"]
+            "rev_only": ["Effie", "Nyx", "Fuga"],
+            "child": "Rhajat"
         },
         {
             "name": "Oboro",
@@ -156,7 +160,8 @@ let unitjson = `{
             "origin": "hoshido",
             "routes": ["br", "rev"],
             "others": ["Subaki", "Takumi", "Kaden"],
-            "rev_only": ["Selena", "Peri", "Odin"]
+            "rev_only": ["Selena", "Peri", "Odin"],
+            "child": "Hisame"
         },
         {
             "name": "Takumi",
@@ -164,7 +169,8 @@ let unitjson = `{
             "origin": "hoshido",
             "routes": ["br", "rev"],
             "others": ["Jakob", "Hinata", "Ryoma"],
-            "rev_only": ["Camilla", "Elise", "Leo"]
+            "rev_only": ["Camilla", "Elise", "Leo"],
+            "child": "Kiragi"
         },
         {
             "name": "Kagero",
@@ -188,7 +194,8 @@ let unitjson = `{
             "origin": "hoshido",
             "routes": ["br", "rev"],
             "others": ["Azama", "Hayato", "Hinata"],
-            "rev_only": ["Charlotte", "Peri", "Keaton"]
+            "rev_only": ["Charlotte", "Peri", "Keaton"],
+            "child": "Selkie"
         },
         {
             "name": "Ryoma",
@@ -196,7 +203,8 @@ let unitjson = `{
             "origin": "hoshido",
             "routes": ["br", "rev"],
             "others": ["Silas", "Saizo", "Takumi"],
-            "rev_only": ["Camilla", "Elise", "Xander"]
+            "rev_only": ["Camilla", "Elise", "Xander"],
+            "child": "Shiro"
         },
         {
             "name": "Scarlet",
@@ -220,7 +228,8 @@ let unitjson = `{
             "origin": "nohr",
             "routes": ["cq", "rev"],
             "others": ["Niles", "Benny", "Keaton"],
-            "rev_only": ["Kagero", "Setsuna", "Azama"]
+            "rev_only": ["Kagero", "Setsuna", "Azama"],
+            "child": "Percy"
         },
         {
             "name": "Effie",
@@ -236,7 +245,8 @@ let unitjson = `{
             "origin": "nohr",
             "routes": ["cq", "rev"],
             "others": ["Niles", "Laslow", "Leo"],
-            "rev_only": ["Orochi", "Kagero", "Hinata"]
+            "rev_only": ["Orochi", "Kagero", "Hinata"],
+            "child": "Ophelia"
         },
         {
             "name": "Niles",
@@ -244,7 +254,8 @@ let unitjson = `{
             "origin": "nohr",
             "routes": ["cq", "rev"],
             "others": ["Arthur", "Odin", "Leo"],
-            "rev_only": ["Oboro", "Setsuna", "Subaki"]
+            "rev_only": ["Oboro", "Setsuna", "Subaki"],
+            "child": "Nina"
         },
         {
             "name": "Nyx",
@@ -292,7 +303,8 @@ let unitjson = `{
             "origin": "nohr",
             "routes": ["cq", "rev"],
             "others": ["Xander", "Odin", "Keaton"],
-            "rev_only": ["Hana", "Orochi", "Saizo"]
+            "rev_only": ["Hana", "Orochi", "Saizo"],
+            "child": "Soleil"
         },
         {
             "name": "Charlotte",
@@ -308,7 +320,8 @@ let unitjson = `{
             "origin": "nohr",
             "routes": ["cq", "rev"],
             "others": ["Arthur", "Keaton"],
-            "rev_only": ["Rinkah", "Oboro", "Hayato"]
+            "rev_only": ["Rinkah", "Oboro", "Hayato"],
+            "child": "Ignatius"
         },
         {
             "name": "Leo",
@@ -316,7 +329,17 @@ let unitjson = `{
             "origin": "nohr",
             "routes": ["cq", "rev"],
             "others": ["Xander", "Odin", "Niles"],
-            "rev_only": ["Sakura", "Hinoka", "Takumi"]
+            "rev_only": ["Sakura", "Hinoka", "Takumi"],
+            "child": "Forrest"
+        },
+        {
+            "name": "Keaton",
+            "status": "male",
+            "origin": "nohr",
+            "routes": ["cq", "rev"],
+            "others": ["Arthur", "Laslow", "Benny"],
+            "rev_only": ["Rinkah", "Hana", "Kaden"],
+            "child": "Velouria"
         },
         {
             "name": "Gunter",
@@ -332,7 +355,8 @@ let unitjson = `{
             "origin": "nohr",
             "routes": ["cq", "rev"],
             "others": ["Laslow", "Leo", "Kaze"],
-            "rev_only": ["Sakura", "Hinoka", "Ryoma"]
+            "rev_only": ["Sakura", "Hinoka", "Ryoma"],
+            "child": "Siegbert"
         },
         {
             "name": "Shura",
@@ -382,6 +406,199 @@ let unitjson = `{
             "others": [],
             "rev_only": []
         }
+    ],
+    "kidlist": [
+        {
+            "name": "Kana",
+            "status": "kana",
+            "origin": "n/a",
+            "routes": ["br", "cq", "rev"],
+            "others": [],
+            "rev_only": []
+        },
+        {
+            "name": "Shigure",
+            "status": "shigure",
+            "origin": "either",
+            "routes": ["br", "cq", "rev"],
+            "others_br": ["Hisame"],
+            "others_cq": ["Forrest"],
+            "others_rev": ["Hisame", "Forrest"]
+        },
+        {
+            "name": "Dwyer",
+            "status": "malekid",
+            "origin": "either",
+            "routes": ["br", "cq", "rev"],
+            "others_br": ["Asugi", "Kiragi"],
+            "others_cq": ["Percy"],
+            "others_rev": ["Kiragi", "Asugi", "Percy"],
+            "father": "Jakob"
+        },
+        {
+            "name": "Sophie",
+            "status": "femalekid",
+            "origin": "either",
+            "routes": ["br", "cq", "rev"],
+            "others_br": ["Caeldori"],
+            "others_cq": ["Soleil", "Velouria"],
+            "others_rev": ["Caeldori", "Velouria", "Soleil"],
+            "father": "Silas"
+        },
+        {
+            "name": "Midori",
+            "status": "femalekid",
+            "origin": "either",
+            "routes": ["br", "cq", "rev"],
+            "others_br": ["Selkie"],
+            "others_cq": ["Ophelia"],
+            "others_rev": ["Selkie", "Ophelia"],
+            "father": "Kaze"
+        },
+        {
+            "name": "Caeldori",
+            "status": "femalekid",
+            "origin": "hoshido",
+            "routes": ["br", "rev"],
+            "others": ["Sophie", "Mitama", "Rhajat"],
+            "rev_only": ["Nina", "Selena", "Nyx"],
+            "father": "Subaki"
+        },
+        {
+            "name": "Asugi",
+            "status": "malekid",
+            "origin": "hoshido",
+            "routes": ["br", "rev"],
+            "others": ["Dwyer", "Hisame", "Shiro"],
+            "rev_only": ["Ignatius", "Beruka", "Charlotte"],
+            "father": "Saizo"
+        },
+        {
+            "name": "Mitama",
+            "status": "femalekid",
+            "origin": "hoshido",
+            "routes": ["br", "rev"],
+            "others": ["Caeldori", "Rhajat"],
+            "rev_only": ["Soleil", "Beruka", "Effie"],
+            "father": "Azama"
+        },
+        {
+            "name": "Rhajat",
+            "status": "femalekid",
+            "origin": "hoshido",
+            "routes": ["br", "rev"],
+            "others": ["Caeldori", "Mitama"],
+            "rev_only": ["Ophelia", "Nyx", "Effie"],
+            "father": "Hayato"
+        },
+        {
+            "name": "Hisame",
+            "status": "malekid",
+            "origin": "hoshido",
+            "routes": ["br", "rev"],
+            "others": ["Asugi", "Kiragi"],
+            "rev_only": ["Percy", "Selena", "Peri"],
+            "father": "Hinata"
+        },
+        {
+            "name": "Kiragi",
+            "status": "malekid",
+            "origin": "hoshido",
+            "routes": ["br", "rev"],
+            "others": ["Dwyer", "Hisame", "Shiro"],
+            "rev_only": ["Forrest", "Camilla", "Elise"],
+            "father": "Takumi"
+        },
+        {
+            "name": "Selkie",
+            "status": "femalekid",
+            "origin": "hoshido",
+            "routes": ["br", "rev"],
+            "others": ["Midori", "Rhajat"],
+            "rev_only": ["Velouria", "Charlotte", "Peri"],
+            "father": "Kaden"
+        },
+        {
+            "name": "Shiro",
+            "status": "malekid",
+            "origin": "hoshido",
+            "routes": ["br", "rev"],
+            "others": ["Asugi", "Kiragi"],
+            "rev_only": ["Siegbert","Camilla", "Sakura"],
+            "father": "Ryoma"
+        },
+        {
+            "name": "Percy",
+            "status": "malekid",
+            "origin": "nohr",
+            "routes": ["cq", "rev"],
+            "others": ["Dwyer", "Ignatius"],
+            "rev_only": ["Hisame", "Kagero", "Setsuna"],
+            "father": "Arthur"
+        },
+        {
+            "name": "Ophelia",
+            "status": "femalekid",
+            "origin": "nohr",
+            "routes": ["cq", "rev"],
+            "others": ["Midori", "Soleil"],
+            "rev_only": ["Rhajat", "Orochi", "Kagero"],
+            "father": "Odin"
+        },
+        {
+            "name": "Nina",
+            "status": "femalekid",
+            "origin": "nohr",
+            "routes": ["cq", "rev"],
+            "others": ["Soleil", "Velouria"],
+            "rev_only": ["Caeldori", "Oboro", "Setsuna"],
+            "father": "Niles"
+        },
+        {
+            "name": "Soleil",
+            "status": "femalekid",
+            "origin": "nohr",
+            "routes": ["cq", "rev"],
+            "others": ["Sophie", "Ophelia", "Nina"],
+            "rev_only": ["Mitama", "Hana", "Orochi"],
+            "father": "Laslow"
+        },
+        {
+            "name": "Ignatius",
+            "status": "malekid",
+            "origin": "nohr",
+            "routes": ["cq", "rev"],
+            "others": ["Percy", "Forrest", "Siegbert"],
+            "rev_only": ["Asugi", "Rinkah", "Oboro"],
+            "father": "Silas"
+        },
+        {
+            "name": "Forrest",
+            "status": "malekid",
+            "origin": "nohr",
+            "routes": ["cq", "rev"],
+            "others": ["Ignatius", "Siegbert"],
+            "rev_only": ["Kiragi", "Sakura", "Hinoka"],
+            "father": "Leo"
+        },
+        {
+            "name": "Velouria",
+            "status": "femalekid",
+            "origin": "nohr",
+            "routes": ["cq", "rev"],
+            "others": ["Sophie", "Nina"],
+            "rev_only": ["Selkie", "Rinkah", "Hana"],
+            "father": "Keaton"
+        },
+        {
+            "name": "Siegbert",
+            "status": "malekid",
+            "origin": "nohr",
+            "routes": ["cq", "rev"],
+            "others": ["Ignatius", "Forrest"],
+            "rev_only": ["Shiro", "Sakura", "Hinoka"],
+            "father": "Xander"
+        }
     ]
 }`;
 
@@ -414,9 +631,14 @@ function loadFirstUnits(selected_route) {
     document.getElementById("route_select_br").disabled = true;
     document.getElementById("route_select_cq").disabled = true;
     document.getElementById("route_select_rev").disabled = true;
-    for (let i = 0; i < units.unitlist.length; i++) {
-        if (units.unitlist[i].routes.includes(selected_route)) {
-            addChild('option', units.unitlist[i].name, "first_unit_select");
+    for (let i = 0; i < units.adultlist.length; i++) {
+        if (units.adultlist[i].routes.includes(selected_route)) {
+            addChild('option', units.adultlist[i].name, "first_unit_select");
+        }
+    }
+    for (let i = 0; i < units.kidlist.length; i++) {
+        if (units.kidlist[i].routes.includes(selected_route)) {
+            addChild('option', units.kidlist[i].name, "first_unit_select");
         }
     }
 }
@@ -441,101 +663,246 @@ function loadSecondUnits() {
     }
     document.getElementById("second_unit_select").disabled = false;
     let first_unit_index = -1;
-    for (let i = 0; i < units.unitlist.length; i++) {
-        if (units.unitlist[i].name == first_unit_name) {
+    let list_origin = "";
+    for (let i = 0; i < units.adultlist.length; i++) {
+        if (units.adultlist[i].name == first_unit_name) {
             first_unit_index = i; //really stupid way of getting this but whatever
+            list_origin = units.adultlist;
             break;
         }
     }
+    if (list_origin == "") {
+        for (let i = 0; i < units.kidlist.length; i++) {
+            if (units.kidlist[i].name == first_unit_name) {
+                first_unit_index = i; //really stupid way of getting this but whatever
+                list_origin = units.kidlist;
+                break;
+            }
+        }
+    }
 
-    let status = units.unitlist[first_unit_index].status; //used to generalize universal pairings
-    let origin = units.unitlist[first_unit_index].origin;
-    let others = units.unitlist[first_unit_index].others; //non-romantic supports or other oddity supports
+    console.log(list_origin);
+    let status = list_origin[first_unit_index].status; //used to generalize universal pairings
+    let origin = list_origin[first_unit_index].origin;
+    let others = list_origin[first_unit_index].others; //non-romantic supports or other oddity supports
+    console.log(status);
     switch (status) {
         default:
             alert("Unrecognized unit status; this error should never appear. If you're seeing this, tell Zander his code sucks.");
         case "corrin": //add every other unit on selected route to the list
-            for (let i = 1; i < units.unitlist.length; i++) {
-                if (units.unitlist[i].routes.includes(route)) {
-                    addChild('option', units.unitlist[i].name, "second_unit_select");
+            for (let i = 1; i < units.adultlist.length; i++) {
+                if (units.adultlist[i].routes.includes(route)) {
+                    addChild('option', units.adultlist[i].name, "second_unit_select");
+                }
+            }
+            for (let i = 0; i < units.kidlist.length; i++) {
+                if (units.kidlist[i].routes.includes(route)) {
+                    addChild('option', units.kidlist[i].name, "second_unit_select");
                 }
             }
             break;
-        case "male": //add Corrin, then all female units from this unit's route, then others
+        case "kana": //add every other unit on selected route to the list
+            addChild('option', "Corrin", "second_unit_select");
+            for (let i = 1; i < units.kidlist.length; i++) {
+                if (units.kidlist[i].routes.includes(route)) {
+                    addChild('option', units.kidlist[i].name, "second_unit_select");
+                }
+            }
+            for (let i = 1; i < units.adultlist.length; i++) {
+                if (units.adultlist[i].routes.includes(route)) {
+                    addChild('option', units.adultlist[i].name, "second_unit_select");
+                }
+            }
+            break;
+        case "shigure": //add Corrin, Kana, and Azura, then every male gen 1, then female gen 2 and others
+            addChild('option', "Corrin", "second_unit_select");
+            addChild('option', "Kana", "second_unit_select");
+            for (let i = 1; i < units.kidlist.length; i++) {
+                if (units.kidlist[i].status == "femalekid" && units.kidlist[i].routes.includes(route)) {
+                    addChild('option', units.kidlist[i].name, "second_unit_select");
+                }
+            }
+            if (route == "br") {
+                for (let i = 0; i < units.kidlist[first_unit_index].others_br.length; i++) {
+                    addChild('option', units.kidlist[first_unit_index].others_br[i], "second_unit_select");
+                }
+            }
+            else if (route == "cq") {
+                for (let i = 0; i < units.kidlist[first_unit_index].others_cq.length; i++) {
+                    addChild('option', units.kidlist[first_unit_index].others_cq[i], "second_unit_select");
+                }
+            }
+            else {
+                for (let i = 0; i < units.kidlist[first_unit_index].others_rev.length; i++) {
+                    addChild('option', units.kidlist[first_unit_index].others_rev[i], "second_unit_select");
+                }
+            }
+            addChild('option', "Azura", "second_unit_select");
+            for (let i = 1; i < units.adultlist.length; i++) {
+                if (units.adultlist[i].status == "male" && units.adultlist[i].routes.includes(route)) {
+                    addChild('option', units.adultlist[i].name, "second_unit_select");
+                }
+            }
+            break;
+        case "male": //add Corrin, then all female units from this unit's route, then others, then child
             addChild('option', "Corrin", "second_unit_select");
             if (origin == "either") {
-                for (let i = 1; i < units.unitlist.length; i++) {
-                    if (units.unitlist[i].status == "female" && units.unitlist[i].routes.includes(route)) {
-                        addChild('option', units.unitlist[i].name, "second_unit_select");
+                for (let i = 1; i < units.adultlist.length; i++) {
+                    if (units.adultlist[i].status == "female" && units.adultlist[i].routes.includes(route)) {
+                        addChild('option', units.adultlist[i].name, "second_unit_select");
                     }
                 }
                 if (route == "br") {
-                    for (let i = 0; i < units.unitlist[first_unit_index].others_br.length; i++) {
-                        addChild('option', units.unitlist[first_unit_index].others_br[i], "second_unit_select");
+                    for (let i = 0; i < units.adultlist[first_unit_index].others_br.length; i++) {
+                        addChild('option', units.adultlist[first_unit_index].others_br[i], "second_unit_select");
                     }
                 }
                 else if (route == "cq") {
-                    for (let i = 0; i < units.unitlist[first_unit_index].others_cq.length; i++) {
-                        addChild('option', units.unitlist[first_unit_index].others_cq[i], "second_unit_select");
+                    for (let i = 0; i < units.adultlist[first_unit_index].others_cq.length; i++) {
+                        addChild('option', units.adultlist[first_unit_index].others_cq[i], "second_unit_select");
                     }
                 }
                 else {
-                    for (let i = 0; i < units.unitlist[first_unit_index].others_rev.length; i++) {
-                        addChild('option', units.unitlist[first_unit_index].others_rev[i], "second_unit_select");
+                    for (let i = 0; i < units.adultlist[first_unit_index].others_rev.length; i++) {
+                        addChild('option', units.adultlist[first_unit_index].others_rev[i], "second_unit_select");
                     }
                 }
             }
             else {
-                for (let i = 1; i < units.unitlist.length; i++) {
-                    if (units.unitlist[i].status == "female" && (units.unitlist[i].origin == origin || units.unitlist[i].origin == "either")) {
-                        addChild('option', units.unitlist[i].name, "second_unit_select");
+                for (let i = 1; i < units.adultlist.length; i++) {
+                    if (units.adultlist[i].status == "female" && (units.adultlist[i].origin == origin || units.adultlist[i].origin == "either")) {
+                        addChild('option', units.adultlist[i].name, "second_unit_select");
                     }
                 }
                 for (let i = 0; i < others.length; i++) {
                     addChild('option', others[i], "second_unit_select");
                 }
+                if (route == "rev") {
+                    for (let i = 0; i < units.adultlist[first_unit_index].rev_only.length; i++) {
+                        addChild('option', units.adultlist[first_unit_index].rev_only[i], "second_unit_select");
+                    }
+                }
+                addChild('option', units.adultlist[first_unit_index].child, "second_unit_select");
+                addChild('option', "Kana", "second_unit_select");
+                addChild('option', "Shigure", "second_unit_select");
             }
             break;
-        case "female": //add Corrin, then all male units from this unit's route, then others
-        addChild('option', "Corrin", "second_unit_select");
-        if (origin == "either") {
-            for (let i = 1; i < units.unitlist.length; i++) {
-                if (units.unitlist[i].status == "male" && units.unitlist[i].routes.includes(route)) {
-                    addChild('option', units.unitlist[i].name, "second_unit_select");
+        case "female": //add Corrin, then all male units from this unit's route, then others, then all non-Shigure kids
+            addChild('option', "Corrin", "second_unit_select");
+            if (origin == "either") {
+                for (let i = 1; i < units.adultlist.length; i++) {
+                    if (units.adultlist[i].status == "male" && units.adultlist[i].routes.includes(route)) {
+                        addChild('option', units.adultlist[i].name, "second_unit_select");
+                    }
                 }
-            }
-            if (route == "br") {
-                for (let i = 0; i < units.unitlist[first_unit_index].others_br.length; i++) {
-                    addChild('option', units.unitlist[first_unit_index].others_br[i], "second_unit_select");
+                if (route == "br") {
+                    for (let i = 0; i < units.adultlist[first_unit_index].others_br.length; i++) {
+                        addChild('option', units.adultlist[first_unit_index].others_br[i], "second_unit_select");
+                    }
                 }
-            }
-            else if (route == "cq") {
-                for (let i = 0; i < units.unitlist[first_unit_index].others_cq.length; i++) {
-                    addChild('option', units.unitlist[first_unit_index].others_cq[i], "second_unit_select");
+                else if (route == "cq") {
+                    for (let i = 0; i < units.adultlist[first_unit_index].others_cq.length; i++) {
+                        addChild('option', units.adultlist[first_unit_index].others_cq[i], "second_unit_select");
+                    }
+                }
+                else {
+                    for (let i = 0; i < units.adultlist[first_unit_index].others_rev.length; i++) {
+                        addChild('option', units.adultlist[first_unit_index].others_rev[i], "second_unit_select");
+                    }
+                }
+                for (let i = 0; i < units.kidlist.length; i++) {
+                    if (units.kidlist[i].routes.includes(route) && units.kidlist[i].name != "Shigure") {
+                        addChild('option', units.kidlist[i].name, "second_unit_select");
+                    }
                 }
             }
             else {
-                for (let i = 0; i < units.unitlist[first_unit_index].others_rev.length; i++) {
-                    addChild('option', units.unitlist[first_unit_index].others_rev[i], "second_unit_select");
+                for (let i = 1; i < units.adultlist.length; i++) {
+                    if (units.adultlist[i].status == "male" && (units.adultlist[i].origin == origin || units.adultlist[i].origin == "either")) {
+                        addChild('option', units.adultlist[i].name, "second_unit_select");
+                    }
+                }
+                for (let i = 0; i < others.length; i++) {
+                    addChild('option', others[i], "second_unit_select");
+                }
+                if (route == "rev") {
+                    for (let i = 0; i < units.adultlist[first_unit_index].rev_only.length; i++) {
+                        addChild('option', units.adultlist[first_unit_index].rev_only[i], "second_unit_select");
+                    }
+                }
+                for (let i = 0; i < units.kidlist.length; i++) {
+                    if (units.kidlist[i].routes.includes(route) && units.kidlist[i].name != "Shigure") {
+                        addChild('option', units.kidlist[i].name, "second_unit_select");
+                    }
                 }
             }
-        }
-        else {
-            for (let i = 1; i < units.unitlist.length; i++) {
-                if (units.unitlist[i].status == "male" && (units.unitlist[i].origin == origin || units.unitlist[i].origin == "either")) {
-                    addChild('option', units.unitlist[i].name, "second_unit_select");
+            break;
+        case "malekid": //add Corrin, then their father, then all opposite gender kids from their route, then others, then all female units from their route
+        case "femalekid":
+            let opposite_status = "";
+            if (status == "malekid") {
+                opposite_status = "femalekid";
+            }
+            else {
+                opposite_status = "malekid";
+            }
+            addChild('option', "Corrin", "second_unit_select");
+            if (origin == "either") {
+                for (let i = 1; i < units.kidlist.length; i++) {
+                    if (units.kidlist[i].status == opposite_status && units.kidlist[i].routes.includes(route)) {
+                        addChild('option', units.kidlist[i].name, "second_unit_select");
+                    }
+                }
+                if (route == "br") {
+                    for (let i = 0; i < units.kidlist[first_unit_index].others_br.length; i++) {
+                        addChild('option', units.kidlist[first_unit_index].others_br[i], "second_unit_select");
+                    }
+                }
+                else if (route == "cq") {
+                    for (let i = 0; i < units.kidlist[first_unit_index].others_cq.length; i++) {
+                        addChild('option', units.kidlist[first_unit_index].others_cq[i], "second_unit_select");
+                    }
+                }
+                else {
+                    for (let i = 0; i < units.kidlist[first_unit_index].others_rev.length; i++) {
+                        addChild('option', units.kidlist[first_unit_index].others_rev[i], "second_unit_select");
+                    }
+                }
+                addChild('option', units.kidlist[first_unit_index].father, "second_unit_select");
+                for (let i = 1; i < units.adultlist.length; i++) {
+                    if (units.adultlist[i].status == "female" && units.adultlist[i].routes.includes(route)) {
+                        addChild('option', units.adultlist[i].name, "second_unit_select");
+                    }
                 }
             }
-            for (let i = 0; i < others.length; i++) {
-                addChild('option', others[i], "second_unit_select");
+            else {
+                for (let i = 1; i < units.kidlist.length; i++) {
+                    if (units.kidlist[i].status == opposite_status && (units.kidlist[i].origin == origin || units.kidlist[i].origin == "either")) {
+                        addChild('option', units.kidlist[i].name, "second_unit_select");
+                    }
+                }
+                for (let i = 0; i < others.length; i++) {
+                    addChild('option', others[i], "second_unit_select");
+                }
+                if (route == "rev") {
+                    for (let i = 0; i < units.kidlist[first_unit_index].rev_only.length; i++) {
+                        addChild('option', units.kidlist[first_unit_index].rev_only[i], "second_unit_select");
+                    }
+                }
+                addChild('option', units.kidlist[first_unit_index].father, "second_unit_select");
+                for (let i = 1; i < units.adultlist.length; i++) {
+                    if (units.adultlist[i].status == "female" && (units.adultlist[i].origin == origin || units.adultlist[i].origin == "either")) {
+                        addChild('option', units.adultlist[i].name, "second_unit_select");
+                    }
+                }
             }
-        }
-        break;
-        case "corrinsexual": //add Corrin and others only
+            break;
+        case "corrinsexual": //add Corrin, Kana and others only
             addChild('option', "Corrin", "second_unit_select");
             for (let i = 0; i < others.length; i++) {
                 addChild('option', others[i], "second_unit_select");
             }
+            addChild('option', "Kana", "second_unit_select");
             break;
     }
     disableButtons();
