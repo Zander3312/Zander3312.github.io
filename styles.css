@@ -37,7 +37,6 @@ th {
   	"area1 area2"
     "area3 area3"
     "area4 area4"
-    "area5 area5"
   }
 
   .tracker_area {
@@ -92,12 +91,6 @@ th {
     padding-left: 100px;
     padding-right: 100px;
   }
-
-  .project5 {
-    grid-area: area5;
-    padding-left: 100px;
-    padding-right: 100px;
-  }
 }
 
 @media(min-width: 500px) and (max-width: 999px) {
@@ -118,7 +111,6 @@ th {
     "area2"
     "area3"
     "area4"
-    "area5"
   }
 
   .project1 {
@@ -135,10 +127,6 @@ th {
 
   .project4 {
     grid-area: area4;
-  }
-
-  .project5 {
-    grid-area: area5;
   }
 }
 
