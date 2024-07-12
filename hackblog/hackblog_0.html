@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../styles.css">
+    <title></title>
+  </head>
+  <body>
+    <div class="sidebar">
+      <ul class="sidebar_menu">
+        <li class="sidebar_item"><a href="../index.html">Home</a></li>
+        <li class="sidebar_item"><a href="../about.html">About Me</a></li>
+        <li class="sidebar_item"><a href="../projects.html">Projects</a></li>
+        <li class="sidebar_item"><a href="hackblog_main.html">Hackblog</a></li>
+      </ul>
+    </div>
+    <div class="main_area" id="main_area">
+      <h1>
+        Part 0: Introduction
+      </h1>
+      <h3>
+        <a href="hackblog_main.html">Home</a> | <a href="hackblog_1.html">Next Part</a>
+      </h3>
+      <p class="hackblog_text">
+        Hey, I'm zander3312. Welcome to my blog detailing the process I am currently undergoing for romhacking The Adventure of Little Ralph on the PlayStation 1 with the intent of
+        translating the game into English. If you're here purely for the tech stuff and don't care about my or this project's background, feel free to skip to part 1.<br><br>
+
+        The purpose of me writing this is to provide a firsthand look at the process a novice romhacker such as myself goes through when trying to learn how to romhack and apply it to a game
+        without a translation. If you're a beginner to romhacking like me, maybe this could inspire you to hack a game yourself? It would be cool to inspire someone I guess. That's part of why I want to
+        make this guide detailed, so it can help other novices through their own hacking processes if they're having trouble.<br><br>
+        
+        Why is this on my website instead of on a forum where people will actually see it? Because I'm not really sure where to put this otherwise. I guess a 
+        romhacking.com forum post would do, but I don't want to make this project too visible until I've made some real progress. I just want to write about my whole process from start to finish
+        as I'm working on it, and I feel like having a forum post rather than just a full personal blog like this would be a little much for my intentions.<br><br>
+        
+        The style of this is somewhat inspired by <a href="https://lparchive.org/Policenauts/"><u>slowbeef's Policenauts posts</u></a> to Let's Play Archive where he details how he got started with romhacking the game,
+        specifically the detailed portions. I'll talk about what I've done and how I did it using a pretty informal tone.
+        Hopefully that will make it more approachable and entertaining for readers, but I could see how it could put some people off. At the end of the day this is the format I find most entertaining to write
+        and will find most entertaining to read back when I inevitably do.<br><br>
+
+        So I called myself a novice, but I guess that's not entirely true. I've messed with romhacking tools for things like Pokemon and Fire Emblem in the past if you want to count the very early days,
+        but the only "real" romhacking I've done was with JoJo's Bizarre Adventure: Heritage for the Future, a Capcom arcade fighting game based on JoJo if you aren't familiar with it.<br><br>
+        
+        I didn't even really play the game, or watch/read JoJo for that matter, but I ended up messing with the files with a hex editor
+        around the time others started getting into hacking the game and before I knew it I was part
+        of the "Stardust Romhackers" as we were called. I went by "Dirty Twelve Main" exclusively in that Discord because teen me wanted to look like an actual fighting game player even though I only played with
+        my friends online on Fightcade every now and then, so if by some miracle you know anything about HFTF hacking's history, I was the guy who messed with the sprites in the early days.<br><br>
+
+        None of us on that team really had much coding knowledge at all, we had maybe one guy who could code and the rest of us just poked around to see what would happen, until eventually we got
+        in contact with someone who had hacked Street Fighter 3: Third Strike, a game made in the same engine, in the past who actually knew what he was doing and carried us the rest of the way.<br><br>
+
+        I'm getting a little off topic here, but the point is I do have minimal experience with romhacking, mostly with hex editing. Also in my skill set is knowing MIPS Assembly, which is gonna be really
+        useful as we will see. Other than that, I have never done anything and most of what I've learned is from reading what others have done.
+        Shoutout to <a href="https://www.youtube.com/watch?v=0tUxVSms4Q4&list=PLMnvGn69IU8AfGrhxcnvLEaDXRizQdHrJ"><u>Hilltop's incredible videos</u></a> on the process on his
+        YouTube channel as well as the aforementioned slowbeef Policenauts posts.<br><br>
+
+        So why Little Ralph? Well, no real reason. I have no history with the game, and as of writing this, I've only played through level 1. The reason I even got back into romhacking has to do with another game
+        entirely, Princess Crown for the Sega Saturn. I recently played Unicorn Overlord on my Switch and loved it, and I was interested in seeing what else developer VanillaWare had put out, which is where I
+        found out about Princess Crown and the fact that it wasn't released in English, and that it didn't even have a translation. So that's when my romhacking past came back to me and I thought: "What if I was
+        the one who translated it?"<br><br>
+
+        After some research, it seemed not only was Princess Crown a common topic in the translation scene, it also was very difficult to hack. There was also a translation already in progress for the game,
+        though it seemed to be stalled in recent years. After reading all this, I decided I would give up on that idea, but the idea of translating something was so tantalizing now. I began to look into other
+        untranslated games out there, preferably on PS1 since most of the resources I found were for PS1 hacking, and I came upon Little Ralph. It's an action game you can play serviceably without reading a word
+        of the dialogue that has no English translation and, as far as I found, no one actively translating it, so it was a perfect choice. There is a translation out there for Brazilian Portuguese, but I
+        will be pretty much pretending it doesn't exist for my purposes. Looking at it would no doubt help me in trying to translate it myself, but that's no fun, is it?<br><br>
+
+        On the topic of fun, that's exactly what this project is for me: just for fun. if I lose interest or passion or just don't feel like it, this project could get dropped at any time. Romhacking is,
+        after all, just a hobby for most, and I don't feel like I need to be pinned down to this project if I decide I don't want to bother anymore. It's also possible
+        I'll quit writing this blog and just stick to hacking only. I'm not saying I'm going to drop working on this game, but
+        I do reserve the right to stop giving a shit if I stop giving a shit, you know? Just thought I would throw that out there.<br><br>
+
+        Well, I've about said what I wanted to say, so let's call it with the preamble and get to the good stuff.
+
+        <h3><a href="hackblog_1.html">Next Part: Getting Started</a></h3>
+      </p>
+    </div>
+  </body>
+</html>

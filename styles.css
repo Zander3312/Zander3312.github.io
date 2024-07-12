@@ -29,6 +29,7 @@ th {
   .main_area {
     left: 200px;
     width: 85%;
+    line-height: 1.5;
   }
 
   .projects {
@@ -157,13 +158,31 @@ th {
   margin: 0px;
 }
 
+a:hover {
+  color: #78d4f0;
+}
+
 .sidebar_item {
   list-style: none;
   padding-bottom: 2rem;
 }
 
-.sidebar_item:hover {
-  color: #78d4f0;
+.hackblog_parts {
+  padding: 0px;
+  margin: 0px;
+  font-size: 1.7rem;
+}
+
+.hackblog_part {
+  list-style: none;
+  padding-bottom: 2rem;
+}
+
+.hackblog_text {
+  width: 60%;
+  margin: auto;
+  text-align: left;
+  padding: 40px;
 }
 
 .highlight:hover {
