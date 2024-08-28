@@ -603,7 +603,9 @@ let unitjson = `{
 }`;
 
 let units = JSON.parse(unitjson);
-let supports_dict = {};
+let supports_dict = {}; //Key is two units, element is their support points
+let added_supports = {}; //Key is first unit, element is a list of all units they have support points with
+let history = []; //list of tuples, first element of tuple is pairing, second is value
 let lb_body = document.getElementById("lb_body");
 document.getElementById("route_select_br").checked = false;
 document.getElementById("route_select_cq").checked = false;
@@ -618,6 +620,7 @@ document.getElementById("1_button").disabled = true;
 document.getElementById("2_button").disabled = true;
 document.getElementById("3_button").disabled = true;
 document.getElementById("4_button").disabled = true;
+document.getElementById("undo_button").disabled = true;
 
 
 function addChild(elt_type, inner, elt_id) {
@@ -634,11 +637,13 @@ function loadFirstUnits(selected_route) {
     for (let i = 0; i < units.adultlist.length; i++) {
         if (units.adultlist[i].routes.includes(selected_route)) {
             addChild('option', units.adultlist[i].name, "first_unit_select");
+            added_supports[units.adultlist[i].name] = [];
         }
     }
     for (let i = 0; i < units.kidlist.length; i++) {
         if (units.kidlist[i].routes.includes(selected_route)) {
             addChild('option', units.kidlist[i].name, "first_unit_select");
+            added_supports[units.kidlist[i].name] = [];
         }
     }
 }
@@ -681,133 +686,185 @@ function loadSecondUnits() {
         }
     }
 
-    console.log(list_origin);
+    let name   = list_origin[first_unit_index].name;
     let status = list_origin[first_unit_index].status; //used to generalize universal pairings
     let origin = list_origin[first_unit_index].origin;
     let others = list_origin[first_unit_index].others; //non-romantic supports or other oddity supports
-    console.log(status);
+    for (let i = 0; i < added_supports[name].length; i++) {
+        addChild('option', added_supports[name][i], "second_unit_select")
+    }
+    if (status != "corrin" && !(added_supports[name].includes("Corrin"))) {
+        addChild('option', "Corrin", "second_unit_select");
+    }
     switch (status) {
         default:
             alert("Unrecognized unit status; this error should never appear. If you're seeing this, tell Zander his code sucks.");
         case "corrin": //add every other unit on selected route to the list
             for (let i = 1; i < units.adultlist.length; i++) {
-                if (units.adultlist[i].routes.includes(route)) {
+                if (units.adultlist[i].routes.includes(route) && !(added_supports[name].includes(units.adultlist[i].name))) {
                     addChild('option', units.adultlist[i].name, "second_unit_select");
                 }
             }
             for (let i = 0; i < units.kidlist.length; i++) {
-                if (units.kidlist[i].routes.includes(route)) {
+                if (units.kidlist[i].routes.includes(route) && !(added_supports[name].includes(units.kidlist[i].name))) {
                     addChild('option', units.kidlist[i].name, "second_unit_select");
                 }
             }
             break;
         case "kana": //add every other unit on selected route to the list
-            addChild('option', "Corrin", "second_unit_select");
             for (let i = 1; i < units.kidlist.length; i++) {
-                if (units.kidlist[i].routes.includes(route)) {
+                if (units.kidlist[i].routes.includes(route) && !(added_supports[name].includes(units.kidlist[i].name))) {
                     addChild('option', units.kidlist[i].name, "second_unit_select");
                 }
             }
             for (let i = 1; i < units.adultlist.length; i++) {
-                if (units.adultlist[i].routes.includes(route)) {
+                if (units.adultlist[i].routes.includes(route) && !(added_supports[name].includes(units.adultlist[i].name))) {
                     addChild('option', units.adultlist[i].name, "second_unit_select");
                 }
             }
             break;
-        case "shigure": //add Corrin, Kana, and Azura, then every male gen 1, then female gen 2 and others
-            addChild('option', "Corrin", "second_unit_select");
-            addChild('option', "Kana", "second_unit_select");
+        case "shigure": //add Kana and Azura, then every male gen 1, then female gen 2 and others
+            if (!(added_supports[name].includes("Kana"))) {
+                addChild('option', "Kana", "second_unit_select");
+            }
             for (let i = 1; i < units.kidlist.length; i++) {
-                if (units.kidlist[i].status == "femalekid" && units.kidlist[i].routes.includes(route)) {
+                if (units.kidlist[i].status == "femalekid" && units.kidlist[i].routes.includes(route) && !(added_supports[name].includes(units.kidlist[i].name))) {
                     addChild('option', units.kidlist[i].name, "second_unit_select");
                 }
             }
             if (route == "br") {
                 for (let i = 0; i < units.kidlist[first_unit_index].others_br.length; i++) {
-                    addChild('option', units.kidlist[first_unit_index].others_br[i], "second_unit_select");
+                    if (!(added_supports[name].includes(units.kidlist[first_unit_index].others_br[i]))) {
+                        addChild('option', units.kidlist[first_unit_index].others_br[i], "second_unit_select");
+                    }
                 }
             }
             else if (route == "cq") {
                 for (let i = 0; i < units.kidlist[first_unit_index].others_cq.length; i++) {
-                    addChild('option', units.kidlist[first_unit_index].others_cq[i], "second_unit_select");
+                    if (!(added_supports[name].includes(units.kidlist[first_unit_index].others_cq[i]))) {
+                        addChild('option', units.kidlist[first_unit_index].others_cq[i], "second_unit_select");
+                    }
                 }
             }
             else {
                 for (let i = 0; i < units.kidlist[first_unit_index].others_rev.length; i++) {
-                    addChild('option', units.kidlist[first_unit_index].others_rev[i], "second_unit_select");
+                    if (!(added_supports[name].includes(units.kidlist[first_unit_index].others_rev[i]))) {
+                        addChild('option', units.kidlist[first_unit_index].others_rev[i], "second_unit_select");
+                    }
                 }
             }
-            addChild('option', "Azura", "second_unit_select");
+            if (!(added_supports[name].includes("Azura"))) {
+                addChild('option', "Azura", "second_unit_select");
+            }
             for (let i = 1; i < units.adultlist.length; i++) {
-                if (units.adultlist[i].status == "male" && units.adultlist[i].routes.includes(route)) {
+                if (units.adultlist[i].status == "male" && units.adultlist[i].routes.includes(route) && !(added_supports[name].includes(units.adultlist[i].name))) {
                     addChild('option', units.adultlist[i].name, "second_unit_select");
                 }
             }
             break;
-        case "male": //add Corrin, then all female units from this unit's route, then others, then child
-            addChild('option', "Corrin", "second_unit_select");
+        case "male": //add all female units from this unit's route, then others, then child
             if (origin == "either") {
                 for (let i = 1; i < units.adultlist.length; i++) {
-                    if (units.adultlist[i].status == "female" && units.adultlist[i].routes.includes(route)) {
+                    if (units.adultlist[i].status == "female" && units.adultlist[i].routes.includes(route) && !(added_supports[name].includes(units.adultlist[i].name))) {
                         addChild('option', units.adultlist[i].name, "second_unit_select");
                     }
                 }
                 if (route == "br") {
                     for (let i = 0; i < units.adultlist[first_unit_index].others_br.length; i++) {
-                        addChild('option', units.adultlist[first_unit_index].others_br[i], "second_unit_select");
+                        if (!(added_supports[name].includes(units.adultlist[first_unit_index].others_br[i]))) {
+                            addChild('option', units.adultlist[first_unit_index].others_br[i], "second_unit_select");
+                        }
                     }
                 }
                 else if (route == "cq") {
                     for (let i = 0; i < units.adultlist[first_unit_index].others_cq.length; i++) {
-                        addChild('option', units.adultlist[first_unit_index].others_cq[i], "second_unit_select");
+                        if (!(added_supports[name].includes(units.adultlist[first_unit_index].others_cq[i]))) {
+                            addChild('option', units.adultlist[first_unit_index].others_cq[i], "second_unit_select");
+                        }
                     }
                 }
                 else {
                     for (let i = 0; i < units.adultlist[first_unit_index].others_rev.length; i++) {
-                        addChild('option', units.adultlist[first_unit_index].others_rev[i], "second_unit_select");
+                        if (!(added_supports[name].includes(units.adultlist[first_unit_index].others_rev[i]))) {
+                            addChild('option', units.adultlist[first_unit_index].others_rev[i], "second_unit_select");
+                        }
                     }
                 }
             }
             else {
                 for (let i = 1; i < units.adultlist.length; i++) {
-                    if (units.adultlist[i].status == "female" && (units.adultlist[i].origin == origin || units.adultlist[i].origin == "either")) {
+                    if (units.adultlist[i].status == "female" && (units.adultlist[i].origin == origin || units.adultlist[i].origin == "either") && !(added_supports[name].includes(units.adultlist[i].name))) {
                         addChild('option', units.adultlist[i].name, "second_unit_select");
                     }
                 }
                 for (let i = 0; i < others.length; i++) {
-                    addChild('option', others[i], "second_unit_select");
+                    if (!(added_supports[name].includes(others[i]))) {
+                        addChild('option', others[i], "second_unit_select");
+                    }
                 }
                 if (route == "rev") {
                     for (let i = 0; i < units.adultlist[first_unit_index].rev_only.length; i++) {
-                        addChild('option', units.adultlist[first_unit_index].rev_only[i], "second_unit_select");
+                        if (!(added_supports[name].includes(units.adultlist[first_unit_index].rev_only[i]))) {
+                            addChild('option', units.adultlist[first_unit_index].rev_only[i], "second_unit_select");
+                        }
                     }
                 }
-                addChild('option', units.adultlist[first_unit_index].child, "second_unit_select");
-                addChild('option', "Kana", "second_unit_select");
-                addChild('option', "Shigure", "second_unit_select");
+                if (!(added_supports[name].includes(units.adultlist[first_unit_index].child))) {
+                    addChild('option', units.adultlist[first_unit_index].child, "second_unit_select");
+                }
+                if (!(added_supports[name].includes("Kana"))) {
+                    addChild('option', "Kana", "second_unit_select");
+                }
+                if (!(added_supports[name].includes("Shigure"))) {
+                    addChild('option', "Shigure", "second_unit_select");
+                }
             }
             break;
-        case "female": //add Corrin, then all male units from this unit's route, then others, then all non-Shigure kids
-            addChild('option', "Corrin", "second_unit_select");
+        case "female": //add all male units from this unit's route, then others, then all non-Shigure kids
             if (origin == "either") {
                 for (let i = 1; i < units.adultlist.length; i++) {
-                    if (units.adultlist[i].status == "male" && units.adultlist[i].routes.includes(route)) {
+                    if (units.adultlist[i].status == "male" && units.adultlist[i].routes.includes(route) && !(added_supports[name].includes(units.adultlist[i].name))) {
                         addChild('option', units.adultlist[i].name, "second_unit_select");
                     }
                 }
                 if (route == "br") {
                     for (let i = 0; i < units.adultlist[first_unit_index].others_br.length; i++) {
-                        addChild('option', units.adultlist[first_unit_index].others_br[i], "second_unit_select");
+                        if (!(added_supports[name].includes(units.adultlist[first_unit_index].others_br[i]))) {
+                            addChild('option', units.adultlist[first_unit_index].others_br[i], "second_unit_select");
+                        }
                     }
                 }
                 else if (route == "cq") {
                     for (let i = 0; i < units.adultlist[first_unit_index].others_cq.length; i++) {
-                        addChild('option', units.adultlist[first_unit_index].others_cq[i], "second_unit_select");
+                        if (!(added_supports[name].includes(units.adultlist[first_unit_index].others_cq[i]))) {
+                            addChild('option', units.adultlist[first_unit_index].others_cq[i], "second_unit_select");
+                        }
                     }
                 }
                 else {
                     for (let i = 0; i < units.adultlist[first_unit_index].others_rev.length; i++) {
-                        addChild('option', units.adultlist[first_unit_index].others_rev[i], "second_unit_select");
+                        if (!(added_supports[name].includes(units.adultlist[first_unit_index].others_rev[i]))) {
+                            addChild('option', units.adultlist[first_unit_index].others_rev[i], "second_unit_select");
+                        }
+                    }
+                }
+            }
+            else {
+                for (let i = 1; i < units.adultlist.length; i++) {
+                    if (units.adultlist[i].status == "male" && (units.adultlist[i].origin == origin || units.adultlist[i].origin == "either") && !(added_supports[name].includes(units.adultlist[i].name))) {
+                        addChild('option', units.adultlist[i].name, "second_unit_select");
+                    }
+                }
+                for (let i = 0; i < others.length; i++) {
+                    if (!(added_supports[name].includes(others[i]))) {
+                        addChild('option', others[i], "second_unit_select");
+                    }
+                }
+                if (route == "rev") {
+                    for (let i = 0; i < units.adultlist[first_unit_index].rev_only.length; i++) {
+                        if (!(added_supports[name].includes(units.adultlist[first_unit_index].rev_only[i]))) {
+                            addChild('option', units.adultlist[first_unit_index].rev_only[i], "second_unit_select");
+                        }
                     }
                 }
                 for (let i = 0; i < units.kidlist.length; i++) {
@@ -816,28 +873,8 @@ function loadSecondUnits() {
                     }
                 }
             }
-            else {
-                for (let i = 1; i < units.adultlist.length; i++) {
-                    if (units.adultlist[i].status == "male" && (units.adultlist[i].origin == origin || units.adultlist[i].origin == "either")) {
-                        addChild('option', units.adultlist[i].name, "second_unit_select");
-                    }
-                }
-                for (let i = 0; i < others.length; i++) {
-                    addChild('option', others[i], "second_unit_select");
-                }
-                if (route == "rev") {
-                    for (let i = 0; i < units.adultlist[first_unit_index].rev_only.length; i++) {
-                        addChild('option', units.adultlist[first_unit_index].rev_only[i], "second_unit_select");
-                    }
-                }
-                for (let i = 0; i < units.kidlist.length; i++) {
-                    if (units.kidlist[i].routes.includes(route) && units.kidlist[i].name != "Shigure") {
-                        addChild('option', units.kidlist[i].name, "second_unit_select");
-                    }
-                }
-            }
             break;
-        case "malekid": //add Corrin, then their father, then all opposite gender kids from their route, then others, then all female units from their route
+        case "malekid": //add their father, then all opposite gender kids from their route, then others, then all female units from their route
         case "femalekid":
             let opposite_status = "";
             if (status == "malekid") {
@@ -846,63 +883,79 @@ function loadSecondUnits() {
             else {
                 opposite_status = "malekid";
             }
-            addChild('option', "Corrin", "second_unit_select");
             if (origin == "either") {
                 for (let i = 1; i < units.kidlist.length; i++) {
-                    if (units.kidlist[i].status == opposite_status && units.kidlist[i].routes.includes(route)) {
+                    if (units.kidlist[i].status == opposite_status && units.kidlist[i].routes.includes(route) && !(added_supports[name].includes(units.kidlist[i].name))) {
                         addChild('option', units.kidlist[i].name, "second_unit_select");
                     }
                 }
                 if (route == "br") {
                     for (let i = 0; i < units.kidlist[first_unit_index].others_br.length; i++) {
-                        addChild('option', units.kidlist[first_unit_index].others_br[i], "second_unit_select");
+                        if (!(added_supports[name].includes(units.kidlist[first_unit_index].others_br[i]))) {
+                            addChild('option', units.kidlist[first_unit_index].others_br[i], "second_unit_select");
+                        }
                     }
                 }
                 else if (route == "cq") {
                     for (let i = 0; i < units.kidlist[first_unit_index].others_cq.length; i++) {
-                        addChild('option', units.kidlist[first_unit_index].others_cq[i], "second_unit_select");
+                        if (!(added_supports[name].includes(units.kidlist[first_unit_index].others_cq[i]))) {
+                            addChild('option', units.kidlist[first_unit_index].others_cq[i], "second_unit_select");
+                        }
                     }
                 }
                 else {
                     for (let i = 0; i < units.kidlist[first_unit_index].others_rev.length; i++) {
-                        addChild('option', units.kidlist[first_unit_index].others_rev[i], "second_unit_select");
+                        if (!(added_supports[name].includes(units.kidlist[first_unit_index].others_rev[i]))) {
+                            addChild('option', units.kidlist[first_unit_index].others_rev[i], "second_unit_select");
+                        }
                     }
                 }
-                addChild('option', units.kidlist[first_unit_index].father, "second_unit_select");
+                if (!(added_supports[name].includes(units.kidlist[first_unit_index].father))) {
+                    addChild('option', units.kidlist[first_unit_index].father, "second_unit_select");
+                }
                 for (let i = 1; i < units.adultlist.length; i++) {
-                    if (units.adultlist[i].status == "female" && units.adultlist[i].routes.includes(route)) {
+                    if (units.adultlist[i].status == "female" && units.adultlist[i].routes.includes(route)  && !(added_supports[name].includes(units.kidlist[i].name))) {
                         addChild('option', units.adultlist[i].name, "second_unit_select");
                     }
                 }
             }
             else {
                 for (let i = 1; i < units.kidlist.length; i++) {
-                    if (units.kidlist[i].status == opposite_status && (units.kidlist[i].origin == origin || units.kidlist[i].origin == "either")) {
+                    if (units.kidlist[i].status == opposite_status && (units.kidlist[i].origin == origin || units.kidlist[i].origin == "either") && !(added_supports[name].includes(units.kidlist[i].name))) {
                         addChild('option', units.kidlist[i].name, "second_unit_select");
                     }
                 }
                 for (let i = 0; i < others.length; i++) {
-                    addChild('option', others[i], "second_unit_select");
+                    if (!(added_supports[name].includes(others[i]))) {
+                        addChild('option', others[i], "second_unit_select");
+                    }
                 }
                 if (route == "rev") {
                     for (let i = 0; i < units.kidlist[first_unit_index].rev_only.length; i++) {
-                        addChild('option', units.kidlist[first_unit_index].rev_only[i], "second_unit_select");
+                        if (!(added_supports[name].includes(units.kidlist[first_unit_index].rev_only[i]))) {
+                            addChild('option', units.kidlist[first_unit_index].rev_only[i], "second_unit_select");
+                        }
                     }
                 }
-                addChild('option', units.kidlist[first_unit_index].father, "second_unit_select");
+                if (!(added_supports[name].includes(units.kidlist[first_unit_index].father))) {
+                    addChild('option', units.kidlist[first_unit_index].father, "second_unit_select");
+                }
                 for (let i = 1; i < units.adultlist.length; i++) {
-                    if (units.adultlist[i].status == "female" && (units.adultlist[i].origin == origin || units.adultlist[i].origin == "either")) {
+                    if (units.adultlist[i].status == "female" && (units.adultlist[i].origin == origin || units.adultlist[i].origin == "either") && !(added_supports[name].includes(units.kidlist[i].name))) {
                         addChild('option', units.adultlist[i].name, "second_unit_select");
                     }
                 }
             }
             break;
-        case "corrinsexual": //add Corrin, Kana and others only
-            addChild('option', "Corrin", "second_unit_select");
+        case "corrinsexual": //add Kana and others only
             for (let i = 0; i < others.length; i++) {
-                addChild('option', others[i], "second_unit_select");
+                if (!(added_supports[name].includes(others[i]))) {
+                    addChild('option', others[i], "second_unit_select");
+                }
             }
-            addChild('option', "Kana", "second_unit_select");
+            if (!(added_supports[name].includes("Kana"))) {
+                addChild('option', "Kana", "second_unit_select");
+            }
             break;
     }
     disableButtons();
@@ -932,9 +985,17 @@ function enableButtons() {
 }
 
 function addSupportPoints(points) {
+    if (points > 0) {
+        document.getElementById("undo_button").disabled = false;
+    }
     document.getElementById("leaderboard_unit_select").disabled = false;
     let first_unit = document.getElementById("first_unit_select").value;
     let second_unit = document.getElementById("second_unit_select").value;
+    let tuple = [first_unit, second_unit, points];;
+    if (!(first_unit.concat(second_unit) in supports_dict || second_unit.concat(first_unit) in supports_dict)) {
+        added_supports[first_unit].push(second_unit);
+        added_supports[second_unit].push(first_unit);
+    }
     if (first_unit.concat(second_unit) in supports_dict) {
         supports_dict[first_unit.concat(second_unit)] += points
     }
@@ -943,6 +1004,10 @@ function addSupportPoints(points) {
     }
     else {
         supports_dict[first_unit.concat(second_unit)] = points
+    }
+    
+    if (points > 0) {
+        history.push(tuple);
     }
     lb_options = document.getElementById("leaderboard_unit_select").options;
     first_found = false;
@@ -1004,4 +1069,18 @@ function loadUnitLB(first_unit_origin) {
         let to_enter = "<th>"+first_unit+"</th><th>"+second_units[i]+"</th><th>"+point_array[i]+"</th>";
         addChild('tr', to_enter, "lb_body");
     }
+}
+
+function undo() {
+    if (history.length == 0) {
+        return;
+    }
+    let tuple = history.pop();
+    if ((document.getElementById("first_unit_select").value == tuple[1]) && (document.getElementById("second_unit_select").value == tuple[0])) { //fixes bug where swapping places then undoing breaks it
+        addSupportPoints(0-tuple[2]);
+        return;
+    }
+    document.getElementById("first_unit_select").value = tuple[0];
+    document.getElementById("second_unit_select").value = tuple[1];
+    addSupportPoints(0-tuple[2]);
 }
