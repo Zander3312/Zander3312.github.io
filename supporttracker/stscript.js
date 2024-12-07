@@ -1066,9 +1066,18 @@ function loadUnitLB(first_unit_origin) {
 
     //add to table
     for (let i = 0; i < second_units.length; i++) {
-        let to_enter = "<th>"+first_unit+"</th><th>"+second_units[i]+"</th><th>"+point_array[i]+"</th>";
+        let to_enter = "<th>"+first_unit+"</th><th>"+second_units[i]+"</th><th>"+point_array[i]+"</th><th><button onClick='selectUnits(`"+first_unit+"`, `"+second_units[i]+"`)'>Select</button>";
+        console.log(to_enter);
         addChild('tr', to_enter, "lb_body");
     }
+}
+
+function selectUnits(first_unit, second_unit) {
+    console.log("function called");
+    document.getElementById("first_unit_select").value = first_unit;
+    loadSecondUnits();
+    document.getElementById("second_unit_select").value = second_unit;
+    enableButtons();
 }
 
 function undo() {
