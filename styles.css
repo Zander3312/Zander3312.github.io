@@ -37,7 +37,7 @@ th {
     grid-template-areas:
   	"area1 area2"
     "area3 area4"
-    "area5 area5"
+    "area5 area6"
   }
 
   .tracker_area {
@@ -95,6 +95,12 @@ th {
 
   .project5 {
     grid-area: area5;
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+
+  .project6 {
+    grid-area: area6;
     padding-left: 100px;
     padding-right: 100px;
   }
